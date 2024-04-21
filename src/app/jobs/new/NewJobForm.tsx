@@ -1,6 +1,7 @@
 "use client";
 
 import LocationInput from "@/components/LocationInput";
+import RichTextEditor from "@/components/RichTextEditor";
 // import LoadingButton from "@/components/LoadingButton";
 // import LocationInput from "@/components/LocationInput";
 // import RichTextEditor from "@/components/RichTextEditor";
@@ -237,7 +238,21 @@ export default function NewJobForm() {
                 />
               </div>
             </div>
-            
+            <FormField
+                control={control}
+                name="description"
+                render={({field}) => (
+                    <FormItem>
+                        <Label>Description</Label>
+                        <FormControl>
+                            <RichTextEditor
+
+                            />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )}
+            />
           </form>
         </Form>
       </div>
