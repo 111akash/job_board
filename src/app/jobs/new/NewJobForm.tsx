@@ -1,10 +1,8 @@
 "use client";
 
+import LoadingButton from "@/components/LoadingButton";
 import LocationInput from "@/components/LocationInput";
 import RichTextEditor from "@/components/RichTextEditor";
-// import LoadingButton from "@/components/LoadingButton";
-// import LocationInput from "@/components/LocationInput";
-// import RichTextEditor from "@/components/RichTextEditor";
 import {
   Form,
   FormControl,
@@ -122,7 +120,7 @@ export default function NewJobForm() {
                     <Input
                       {...fieldValues}
                       type="file"
-                    //   accept="image/*"
+                      accept="image/*"
                       onChange={(e) => {
                         const file = e.target.files?.[0];
                         fieldValues.onChange(file);
@@ -172,7 +170,7 @@ export default function NewJobForm() {
                   <FormLabel>Office location</FormLabel>
                   <FormControl>
                     <LocationInput
-                      onLocationSelected= {field.onChange}
+                      onLocationSelected={field.onChange}
                       ref={field.ref}
                     />
                   </FormControl>
@@ -239,20 +237,41 @@ export default function NewJobForm() {
               </div>
             </div>
             <FormField
-                control={control}
-                name="description"
-                render={({field}) => (
-                    <FormItem>
-                        <Label>Description</Label>
-                        <FormControl>
-                            <RichTextEditor
-
-                            />
-                        </FormControl>
-                        <FormMessage />
-                    </FormItem>
-                )}
+              control={control}
+              name="description"
+              render={({ field }) => (
+                <FormItem>
+                  <Label onClick={() => setFocus("description")}>
+                    Description
+                  </Label>
+                  <FormControl>
+                    <RichTextEditor
+                      onChange={(draft) =>
+                        field.onChange(draftToMarkdown(draft))
+                      }
+                      ref={field.ref}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
+            <FormField
+              control={control} 
+              name="salary"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Salary</FormLabel>
+                  <FormControl>
+                    <Input {...field} type="number" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <LoadingButton type="submit" loading={isSubmitting}>
+              Submit
+            </LoadingButton>
           </form>
         </Form>
       </div>
