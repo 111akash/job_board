@@ -5,13 +5,14 @@ import H1 from "@/components/ui/h1";
 import prisma from "@/lib/prisma";
 import { JobFilterValues } from "@/lib/validation";
 import { Metadata } from "next";
-
+ 
 interface PageProps {
   searchParams: {
     q?: string,
     type?: string,
     location?: string,
     remote?: string,
+    page? : string,
   }
 }
 
@@ -42,7 +43,7 @@ export function generateMetadata({
   }
 }
 
-export default async function Home({searchParams: {q, type, location, remote}}: PageProps) {
+export default async function Home({searchParams: {q, type, location, remote, page}}: PageProps) {
   const filterValues: JobFilterValues = {
     q, 
     type,
@@ -59,7 +60,10 @@ export default async function Home({searchParams: {q, type, location, remote}}: 
       </div>
       <section className="flex flex-col md:flex-row gap-4">
         <JobFilterSidebar defaultValues={filterValues}/>
-        <JobResults filterValues={filterValues} />
+        <JobResults 
+          filterValues={filterValues} 
+          page={page ? parseInt(page) : undefined}
+        />
       </section>
     </main>
   ); 
