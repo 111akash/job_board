@@ -23,4 +23,12 @@ DevJobs is a comprehensive job board platform for developers, featuring tools to
    ```
    git clone https://github.com/yourusername/devjobs.git
    ```
-2. 
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Set up environment variables for Prisma, Clerk, and any other required configurations.
+4. Start the app locally:
+   ```
+   npm run dev
+   ```
