@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DevJobs
 
-## Getting Started
+DevJobs is a comprehensive job board platform for developers, featuring tools to make job searches quick and efficient. It allows users to filter, sort, and paginate job listings and provides an admin interface for approving posted jobs, making it an ideal solution for tech job listings.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Advanced Filtering**: Filter jobs by title, type, location, and more to find the perfect match.
+- **Sorting and Pagination**: Easily browse through job listings with pagination and sorting options.
+- **Admin Panel**: Admins can approve, edit, or remove job listings to maintain a quality board.
+- **Remote Job Toggle**: Quickly filter jobs that are available remotely.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **React + Next.js**: Provides a responsive, dynamic user interface with server-side rendering.
+- **TypeScript**: Ensures code reliability and maintainability with type safety.
+- **Tailwind CSS**: Used for styling, providing a clean and modern design.
+- **Prisma**: ORM for easy and efficient database management.
+- **Clerk**: Manages user authentication to secure access for job posters and admins.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## How to Get Started
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/devjobs.git
+   ```
+2. 
